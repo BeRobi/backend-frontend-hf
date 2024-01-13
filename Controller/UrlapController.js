@@ -1,4 +1,5 @@
-import UrlapView from "../View/UrlapView.js";
+import DataService from "../Model/DataService.js";
+import UrlapView from "../View/Tablazat/UrlapView.js";
 
 class UrlapController {
   constructor() {

@@ -20,7 +20,7 @@ class Controller {
   }
   megjelenit(list) {
     console.log(list);
-    new TablaView(list, $(".article"));
+    new TablaView(list, $(".adatok"));
   }
     
 }

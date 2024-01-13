@@ -11,6 +11,7 @@ export default class SorView {
     let txt = "<tr>";
     for (const key in this.#obj) {
       txt += `<td>${this.#obj[key]}</td>`;
+      console.log(this.#obj[key])
     }
 
     txt += "</tr>";

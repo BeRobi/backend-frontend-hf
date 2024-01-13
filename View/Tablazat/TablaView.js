@@ -1,4 +1,4 @@
-import DataService from "../../Model/DataService.js";
+//import DataService from "../../Model/DataService.js";
 import FejlecView from "./FejlecView.js";
 import SorView from "./SorView.js";
 
@@ -16,12 +16,11 @@ export default class TablaView {
     this.formElem = $(".urlap");
     this.gombElem = $("button")
    
-
     console.log(this.formElem)
 
     console.log(this.tbodyElem);
-    new FejlecView(DataService, this.theadElem);
-   
+    new FejlecView(list, this.theadElem);
+
     this.sorMegjelenit();
   }
   sorMegjelenit() {

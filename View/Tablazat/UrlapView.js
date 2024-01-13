@@ -1,3 +1,4 @@
+import DataService from "../../Model/DataService.js";
 import TextUrlapView from "./TextUrlapView.js";
 import NumberUrlapView from "./NumberUrlapView.js";
 

@@ -4,16 +4,18 @@ export default class FejlecView {
     this.#obj = obj;
 
     this.szuloElem = szuloElem;
-    console.log(this.#obj);
+    
     this.htmLOsszerak();
   }
   htmLOsszerak() {
     let txt = "<tr>";
     for (const key in this.#obj) {
       txt += `<th>${this.#obj[key]}</th>`;
+      console.log(this.#obj[key]);
     }
     txt += "</tr>";
     console.log(txt);
+    
     this.szuloElem.append(txt);
   }
 }
