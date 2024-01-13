@@ -1,4 +1,5 @@
 import DataService from "../Model/DataService.js";
+import TablaView from "../View/Tablazat/TablaView.js";
 
 class Controller {
   constructor() {
@@ -19,7 +20,7 @@ class Controller {
   }
   megjelenit(list) {
     console.log(list);
-    new View(list, $(".adatok"));
+    new TablaView(list, $(".article"));
   }
     
 }

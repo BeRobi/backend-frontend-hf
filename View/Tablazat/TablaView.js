@@ -1,4 +1,4 @@
-import DataService from "../Model/DataService.js";
+import DataService from "../../Model/DataService.js";
 import FejlecView from "./FejlecView.js";
 import SorView from "./SorView.js";
 
