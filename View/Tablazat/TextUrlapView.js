@@ -26,10 +26,9 @@ export default class TextUrlapView {
     return this.inputElem.val();
   }
 
-  getValid(){
-    return this.#valid
+  getValid() {
+    return this.#valid;
   }
-
 
   textUrlapElem() {
     let txt = `<div class="mb-3 mt-3">

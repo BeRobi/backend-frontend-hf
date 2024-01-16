@@ -52,9 +52,9 @@ export default class DataService {
   }
 
   deleteAxiosData(url, id) {
-    console.log("${url}/${id}");
+    console.log(`${url}/${id}`);
     axios
-      .delete("${url}/${id}")
+      .delete(`${url}/${id}`)
       .then((response) => {
         console.log("RESP", response);
       })

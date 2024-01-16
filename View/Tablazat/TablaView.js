@@ -1,4 +1,3 @@
-//import DataService from "../../Model/DataService.js";
 import FejlecView from "./FejlecView.js";
 import SorView from "./SorView.js";
 
@@ -6,7 +5,7 @@ export default class TablaView {
   #list = [];
   constructor(list, szuloElem) {
     this.#list = list;
-    console.log(this.#list);
+    //console.log(this.#list);
     szuloElem.append(`<table class='table table-striped'>
         <thead></thead>
         <tbody></tbody>
@@ -14,19 +13,18 @@ export default class TablaView {
     this.tbodyElem = szuloElem.find("tbody");
     this.theadElem = szuloElem.find("thead");
     this.formElem = $(".urlap");
-    this.gombElem = $("button")
-   
-    console.log(this.formElem)
+    this.gombElem = $("button");
 
-    console.log(this.tbodyElem);
-    new FejlecView(list, this.theadElem);
+    //console.log(this.formElem);
+    //console.log(this.tbodyElem);
 
+    new FejlecView(list[0], this.theadElem);
     this.sorMegjelenit();
   }
   sorMegjelenit() {
     this.#list.forEach((elem, index) => {
       new SorView(index, elem, this.tbodyElem);
-    
+
       index++;
     });
   }

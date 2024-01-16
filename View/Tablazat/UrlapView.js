@@ -1,6 +1,6 @@
-import DataService from "../../Model/DataService.js";
 import TextUrlapView from "./TextUrlapView.js";
 import NumberUrlapView from "./NumberUrlapView.js";
+import { adatLeiras } from "../../adat.js";
 
 class UrlapView {
   #formAdat = {};
@@ -27,7 +27,7 @@ class UrlapView {
       event.preventDefault();
       this.#urlapValid = true;
       this.#inputElemObjektumokLista.forEach((elem) => {
-        //console.log(elem);
+        console.log(elem);
         //console.log(elem.key);
         //console.log(elem.getValue());
         this.#formAdat[elem.key] = elem.getValue();
@@ -36,10 +36,11 @@ class UrlapView {
       //this.#formAdat.nev=this.nevElem.val()
       //this.#formAdat.szul=this.szulEvElem.val()
 
-      console.log(this.#formAdat);
+      //console.log(this.#formAdat);
 
       if (this.#urlapValid) {
         this.trigger("ujAdatHozzaAdasa");
+        
       } else {
         console.log("Az adatok nem validak!");
       }

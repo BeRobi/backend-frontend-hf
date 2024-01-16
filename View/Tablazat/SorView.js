@@ -1,21 +1,51 @@
 export default class SorView {
-  #obj = {};
-  constructor(index, obj, szuloElem) {
-    this.#obj = obj;
-    this.index = index;
-    this.szuloElem = szuloElem;
-    console.log(this.#obj);
-    this.htmLOsszerak();
-  }
-  htmLOsszerak() {
-    let txt = "<tr>";
-    for (const key in this.#obj) {
-      txt += `<td>${this.#obj[key]}</td>`;
-      console.log(this.#obj[key])
-    }
+  #adat = {}; // az adott objektum
 
+  constructor(index, adat, szuloElem) {
+    this.index = index;
+    this.#adat = adat;
+    this.tablaElem = szuloElem;
+    this.#sor(); //privát tagfüggvény
+    /** eseménykezelők a kész és a törlés gombokhoz */
+    this.sorElem = this.tablaElem.children("tr:last-child");
+    this.keszElem = this.sorElem.children("td").children(".kesz");
+    this.megseElem = this.sorElem.children("td").children(".megse");
+    this.torolElem = this.sorElem.children("td").children(".torol");
+
+    //console.log(this.keszElem);
+    this.keszElem.on("click", () => {
+      // callback fv.
+      // console.log(this)
+      this.#esemenyTrigger("kesz");
+    });
+
+    this.torolElem.on("click", () => {
+      // callback fv.
+      //console.log(this)
+      this.#esemenyTrigger("torol");
+    });
+
+    this.megseElem.on("click", () => {
+      // callback fv.
+      // console.log(this)
+      this.#esemenyTrigger("megse");
+    });
+  }
+
+  #sor() {
+    let txt = "";
+    txt += "<tr>";
+    for (const key in this.#adat) {
+      txt += `<td>${this.#adat[key]}</td>`; // konkrét kulcshoz tartozó adat
+    }
+    txt += `<td></span><span class="torol">🗑</span></td>`;
     txt += "</tr>";
-    console.log(txt);
-    this.szuloElem.append(txt);
+    this.tablaElem.append(txt);
+  }
+
+  #esemenyTrigger(esemenyNev) {
+    const e = new CustomEvent(esemenyNev, { detail: this.#adat.id });
+    window.dispatchEvent(e);
+    console.log(this.#adat.id);
   }
 }
